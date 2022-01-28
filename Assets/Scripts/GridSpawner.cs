@@ -6,8 +6,8 @@ public class GridSpawner : MonoBehaviour
 {
     Vector3 position;
     public GameObject prefab;
-    public int x=5;
-    public int y=5;
+    public int x=8;
+    public int y=8;
 
 
     public void SpawnGrid()
@@ -16,7 +16,7 @@ public class GridSpawner : MonoBehaviour
         {
             for (int v = 0; v < y; v++)
             {
-                position = new Vector3((float)h*3,10f,(float)v*3);
+                position = new Vector3((float)(h+5),0f,(float)(v+5));
                 Instantiate(prefab, position, prefab.transform.rotation);  
             }
         }

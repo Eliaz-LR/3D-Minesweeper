@@ -483,8 +483,8 @@ GameObject:
   - component: {fileID: 1082681460}
   - component: {fileID: 1082681459}
   - component: {fileID: 1082681458}
-  - component: {fileID: 1082681461}
   - component: {fileID: 1082681462}
+  - component: {fileID: 1082681461}
   m_Layer: 3
   m_Name: testCube
   m_TagString: Untagged
@@ -627,8 +627,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 7969817367315034864, guid: 3c208f24b85ce854dbc5b9071374aff0, type: 3}
-  x: 5
-  y: 5
+  x: 8
+  y: 8
 --- !u!4 &1490479619
 Transform:
   m_ObjectHideFlags: 0
@@ -810,7 +810,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 1625131921}
   speed: 12
-  gravity: -9.81
+  gravity: -20
   jumpHeight: 3
   groundCheck: {fileID: 428650447}
   groundDistance: 0.4
