@@ -12,6 +12,9 @@ public class GridSpawner : MonoBehaviour
 
     public void SpawnGrid()
     {
+        Vector2 coords = DifficultyGrid.getSize();
+        x=(int)coords.x;
+        y=(int)coords.y;
         for (int h = 0; h < x; h++)
         {
             for (int v = 0; v < y; v++)
