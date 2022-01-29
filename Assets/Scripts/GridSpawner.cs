@@ -25,7 +25,7 @@ public class GridSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        SpawnGrid();
     }
 
     // Update is called once per frame
