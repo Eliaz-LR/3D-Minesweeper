@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using TMPro;
 
@@ -7,6 +6,7 @@ public class Timer : MonoBehaviour
 {
     TextMeshProUGUI mText;
     float time = 0f;
+    TimeSpan timer;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +18,7 @@ public class Timer : MonoBehaviour
     void Update()
     {
         time+=Time.deltaTime;
-        mText.text=time.ToString("0.00");
+        timer=TimeSpan.FromSeconds(time);
+        mText.text=timer.ToString("mm':'ss'.'ff");
     }
 }
