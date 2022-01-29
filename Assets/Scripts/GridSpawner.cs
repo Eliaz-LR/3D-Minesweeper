@@ -15,11 +15,11 @@ public class GridSpawner : MonoBehaviour
         Vector2 coords = DifficultyGrid.getSize();
         x=(int)coords.x;
         y=(int)coords.y;
-        for (int h = 0; h < x; h++)
+        for (int h = -x; h < x; h++)
         {
-            for (int v = 0; v < y; v++)
+            for (int v = -y; v < y; v++)
             {
-                position = new Vector3((float)(h+5),0f,(float)(v+5));
+                position = new Vector3((float)(h),0f,(float)(v));
                 Instantiate(prefab, position, prefab.transform.rotation);  
             }
         }
