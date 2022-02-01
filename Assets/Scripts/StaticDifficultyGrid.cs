@@ -4,13 +4,13 @@ using UnityEngine;
 
 public static class DifficultyGrid
 {
-    private static Vector2 vector2;
-    public static Vector2 getSize()
+    private static Vector2Int position;
+    public static Vector2Int getSize()
     {
-        return vector2;
+        return position;
     }
     public static void setSize(int x, int y)
     {
-        vector2.Set(x,y);
+        position.Set(x,y);
     }
 }
