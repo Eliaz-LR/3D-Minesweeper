@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class SweeperManager
 {
     private Vector2Int size;
@@ -31,6 +31,56 @@ public class SweeperManager
         {
             Material reaveled = squareObjectCollection[coords.x,coords.y].GetComponentInChildren<RayRecever>().reaveled;
             squareObjectCollection[coords.x,coords.y].GetComponentInChildren<Renderer>().material = reaveled;
+            int nbMinesAround=GetNumberOfNeighbouringMines(coords);
+            if (nbMinesAround==0)
+            {
+                Debug.Log("! Pas de mine autour !");
+                //List<Vector2Int> neighbours=GetNeighbouringCoords(coords);
+                //Debug.Log("! Il y a "+neighbours.Count+" voisins !");
+                // foreach (Vector2Int neighbour in neighbours)
+                // {
+                //     Activate(neighbour);
+                // }
+            }
+            else
+            {
+                squareObjectCollection[coords.x,coords.y].GetComponentInChildren<TextMeshPro>().text=nbMinesAround.ToString();
+            }
+            
         }
+    }
+    private List<Vector2Int> GetNeighbouringCoords(Vector2Int coords)
+    {
+        List<Vector2Int> neighbours=new List<Vector2Int>();
+        for (int x = coords.x-1; x <= coords.x+1; x++)
+        {
+            for (int y = coords.y-1; y <= coords.y+1; y++)
+            {
+                if (x>=0 && x<size.x && y>=0 && y<size.y)
+                {
+                    neighbours.Add(new Vector2Int(x,y));
+                }
+            }
+        }
+        return neighbours;
+    }
+    private int GetNumberOfNeighbouringMines(Vector2Int coords)
+    {
+        int count =0;
+        for (int i = coords.x-1; i <= coords.x+1; i++)
+        {
+            for (int j = coords.y-1; j <= coords.y+1; j++)
+            {
+                if (i>=0 && i<size.x && j>=0 && j<size.y)
+                {
+                    if (emplacementsMines.Contains(new Vector2Int(i,j)))
+                    {
+                        count++;
+                    }
+                }
+            }
+        }
+
+        return count;
     }
 }
