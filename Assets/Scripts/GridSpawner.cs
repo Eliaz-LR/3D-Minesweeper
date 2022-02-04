@@ -15,12 +15,13 @@ public class GridSpawner : MonoBehaviour
         Vector2Int coords = DifficultyGrid.getSize();
         x=coords.x;
         y=coords.y;
-        for (int h = -x/2; h < x/2; h++)
+        for (int h = 0; h < x; h++)
         {
-            for (int v = -y/2; v < y/2; v++)
+            for (int v = 0; v < y; v++)
             {
-                position = new Vector3((float)(h),0f,(float)(v));
-                Instantiate(prefab, position, prefab.transform.rotation);  
+                position = new Vector3((float)(h-x/2),0f,(float)(v-y/2));
+                GameObject obj = Instantiate(prefab, position, prefab.transform.rotation);
+                obj.GetComponentInChildren<RayRecever>().setCoord(new Vector2Int(h,v));
             }
         }
     }

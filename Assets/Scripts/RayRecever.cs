@@ -6,21 +6,15 @@ public class RayRecever : MonoBehaviour
 {
 
     public Material reaveled;
+    private Vector2Int coord;
 
-    // Start is called before the first frame update
-    void Start()
+    public void setCoord(Vector2Int coord)
     {
-        
+        this.coord = coord;
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void Activate()
     {
-        Debug.Log("activation du cube");
+        Debug.Log("activation du cube " + coord);
         GetComponent<Renderer>().material = reaveled;
     }
 }
