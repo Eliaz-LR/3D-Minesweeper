@@ -29,7 +29,8 @@ public class GridSpawner : MonoBehaviour
 
     private void ManagerInit()
     {
-        sweeperManager=new SweeperManager(new Vector2Int(x,y),8);
+        int nbMines=8;
+        sweeperManager=new SweeperManager(new Vector2Int(x,y),nbMines);
     }
 
     // Start is called before the first frame update

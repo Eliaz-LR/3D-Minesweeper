@@ -27,7 +27,10 @@ public class SweeperManager
         {
             Debug.Log("! Mine trouvée !");
         }
-        Material reaveled = squareObjectCollection[coords.x,coords.y].GetComponentInChildren<RayRecever>().reaveled;
-        squareObjectCollection[coords.x,coords.y].GetComponentInChildren<Renderer>().material = reaveled;
+        else
+        {
+            Material reaveled = squareObjectCollection[coords.x,coords.y].GetComponentInChildren<RayRecever>().reaveled;
+            squareObjectCollection[coords.x,coords.y].GetComponentInChildren<Renderer>().material = reaveled;
+        }
     }
 }

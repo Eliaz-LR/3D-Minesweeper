@@ -18,7 +18,7 @@ public class SweeperGenerator
         emplacementsMines=new List<Vector2Int>();
         int randX;
         int randY;
-        for (int i = 0; i < nbMines; i++)
+        for (int i = 0; i < nbMines-1; i++)
         {
             do
             {
