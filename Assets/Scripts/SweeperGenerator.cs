@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MineSweeperGrid
+public class SweeperGenerator
 {
     private Vector2Int size;
     private int nbMines;
     private List<Vector2Int> emplacementsMines;
-    private MineSweeperGrid(Vector2Int size, int numberOfMines)
+    public SweeperGenerator(Vector2Int size, int numberOfMines)
     {
         this.size = size;
         this.nbMines = numberOfMines;
