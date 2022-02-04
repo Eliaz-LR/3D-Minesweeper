@@ -8,6 +8,8 @@ public class SweeperManager
     private int nbMines;
     private List<Vector2Int> emplacementsMines;
     SweeperGenerator sweeperGenerator=null;
+    public GameObject[,] squareObjectCollection {get; set;}
+
     public SweeperManager(Vector2Int size, int nbMines)
     {
         this.size = size;
@@ -20,6 +22,12 @@ public class SweeperManager
             sweeperGenerator=new SweeperGenerator(size,nbMines);
             emplacementsMines=sweeperGenerator.Generate(coords);
             Debug.Log("Generation de ce genre de grid mon gars");
+        }
+        else
+        {
+            
+            Material reaveled = squareObjectCollection[coords.x,coords.y].GetComponentInChildren<RayRecever>().reaveled;
+            squareObjectCollection[coords.x,coords.y].GetComponentInChildren<Renderer>().material = reaveled;
         }
     }
 }

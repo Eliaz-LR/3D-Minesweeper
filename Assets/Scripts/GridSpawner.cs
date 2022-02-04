@@ -9,9 +9,11 @@ public class GridSpawner : MonoBehaviour
     public int x=8;
     public int y=8;
     public SweeperManager sweeperManager;
+    public GameObject[,] squareObjectCollection;
 
     private void SpawnGrid()
     {
+        squareObjectCollection=new GameObject[x,y];
         for (int h = 0; h < x; h++)
         {
             for (int v = 0; v < y; v++)
@@ -19,8 +21,10 @@ public class GridSpawner : MonoBehaviour
                 position = new Vector3((float)(h-x/2),0f,(float)(v-y/2));
                 GameObject obj = Instantiate(prefab, position, prefab.transform.rotation);
                 obj.GetComponentInChildren<RayRecever>().setCoord(new Vector2Int(h,v));
+                squareObjectCollection[h,v]=obj;
             }
         }
+        sweeperManager.squareObjectCollection=squareObjectCollection;
     }
 
     private void ManagerInit()
