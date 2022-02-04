@@ -29,7 +29,7 @@ public class GridSpawner : MonoBehaviour
 
     private void ManagerInit()
     {
-        int nbMines=8;
+        int nbMines=DifficultyGrid.nbMines;
         sweeperManager=new SweeperManager(new Vector2Int(x,y),nbMines);
     }
 
