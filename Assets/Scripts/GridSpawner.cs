@@ -8,13 +8,10 @@ public class GridSpawner : MonoBehaviour
     public GameObject prefab;
     public int x=8;
     public int y=8;
+    public SweeperManager sweeperManager;
 
-
-    public void SpawnGrid()
+    private void SpawnGrid()
     {
-        Vector2Int coords = DifficultyGrid.getSize();
-        x=coords.x;
-        y=coords.y;
         for (int h = 0; h < x; h++)
         {
             for (int v = 0; v < y; v++)
@@ -26,9 +23,19 @@ public class GridSpawner : MonoBehaviour
         }
     }
 
+    private void ManagerInit()
+    {
+        sweeperManager=new SweeperManager(new Vector2Int(x,y),8);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        Vector2Int coords = DifficultyGrid.getSize();
+        x=coords.x;
+        y=coords.y;
+
+        ManagerInit();
         SpawnGrid();
     }
 

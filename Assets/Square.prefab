@@ -109,6 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reaveled: {fileID: 2100000, guid: a734e964f1ff3ca46b84eda0d69ad9fa, type: 2}
+  activated: 0
 --- !u!1 &7969817367315034864
 GameObject:
   m_ObjectHideFlags: 0

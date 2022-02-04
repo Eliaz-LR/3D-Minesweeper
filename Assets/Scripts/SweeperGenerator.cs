@@ -24,13 +24,13 @@ public class SweeperGenerator
             {
                 randX=Random.Range(0,size.x);
                 randY=Random.Range(0,size.y);
-            } while (!caseIsFree(randX,randY,coordInitClick));
+            } while (!CaseIsFree(randX,randY,coordInitClick));
             emplacementsMines.Add(new Vector2Int(randX,randY));
         }
         return emplacementsMines;
     }
 
-    private bool caseIsFree(int randX, int randY, Vector2Int coordInitClick){
+    private bool CaseIsFree(int randX, int randY, Vector2Int coordInitClick){
         Vector2Int rand = new Vector2Int(randX,randY);
         if (coordInitClick==rand)
         {
