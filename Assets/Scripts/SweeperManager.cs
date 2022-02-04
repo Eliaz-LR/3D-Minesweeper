@@ -23,11 +23,11 @@ public class SweeperManager
             emplacementsMines=sweeperGenerator.Generate(coords);
             Debug.Log("Generation de ce genre de grid mon gars");
         }
-        else
+        if (emplacementsMines.Contains(coords))
         {
-            
-            Material reaveled = squareObjectCollection[coords.x,coords.y].GetComponentInChildren<RayRecever>().reaveled;
-            squareObjectCollection[coords.x,coords.y].GetComponentInChildren<Renderer>().material = reaveled;
+            Debug.Log("! Mine trouvée !");
         }
+        Material reaveled = squareObjectCollection[coords.x,coords.y].GetComponentInChildren<RayRecever>().reaveled;
+        squareObjectCollection[coords.x,coords.y].GetComponentInChildren<Renderer>().material = reaveled;
     }
 }
