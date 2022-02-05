@@ -14,6 +14,7 @@ public class StateManager : MonoBehaviour
     public void Victory()
     {
         MenuSetup();
+        victory.Setup();
     }
     private void MenuSetup()
     {

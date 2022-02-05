@@ -103,7 +103,7 @@ public class SweeperManager
                 }
             }
         }
-        if (count==size.x*size.y-nbMines)
+        if (count==size.x*size.y-nbMines+1)
         {
             return true;
         }

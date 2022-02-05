@@ -16,6 +16,5 @@ public class GameOver : MonoBehaviour
         
         gameObject.SetActive(true);
         menuButton.onClick.AddListener(ReturnToMenu);
-        menuButton.transform.SetSiblingIndex(0);
     }
 }
