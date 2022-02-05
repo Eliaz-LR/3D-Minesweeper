@@ -35,15 +35,17 @@ public class SweeperManager
             if (nbMinesAround==0)
             {
                 Debug.Log("! Pas de mine autour !");
-                //List<Vector2Int> neighbours=GetNeighbouringCoords(coords);
-                //Debug.Log("! Il y a "+neighbours.Count+" voisins !");
-                // foreach (Vector2Int neighbour in neighbours)
-                // {
-                //     Activate(neighbour);
-                // }
+                List<Vector2Int> neighbours=GetNeighbouringCoords(coords);
+                Debug.Log("! Il y a "+neighbours.Count+" voisins !");
+                foreach (Vector2Int neighbour in neighbours)
+                {
+                    //Activate(neighbour); //!ne marche pas car ne check pas si la case est déjà activée
+                    squareObjectCollection[neighbour.x,neighbour.y].GetComponentInChildren<RayRecever>().Activate();
+                }
             }
             else
             {
+                // Afficher le nombre de mines autour
                 squareObjectCollection[coords.x,coords.y].GetComponentInChildren<TextMeshPro>().text=nbMinesAround.ToString();
             }
             
@@ -56,7 +58,7 @@ public class SweeperManager
         {
             for (int y = coords.y-1; y <= coords.y+1; y++)
             {
-                if (x>=0 && x<size.x && y>=0 && y<size.y)
+                if (x>=0 && x<size.x && y>=0 && y<size.y && !(x==coords.x && y==coords.y))
                 {
                     neighbours.Add(new Vector2Int(x,y));
                 }
