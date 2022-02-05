@@ -19,7 +19,7 @@ public class SweeperManager
     {
         if (sweeperGenerator==null)
         {
-            sweeperGenerator=new SweeperGenerator(size,nbMines);
+            sweeperGenerator=new SweeperGenerator(size,nbMines,this);
             emplacementsMines=sweeperGenerator.Generate(coords);
             Debug.Log("Generation de ce genre de grid mon gars");
         }
@@ -51,7 +51,7 @@ public class SweeperManager
             
         }
     }
-    private List<Vector2Int> GetNeighbouringCoords(Vector2Int coords)
+    public List<Vector2Int> GetNeighbouringCoords(Vector2Int coords)
     {
         List<Vector2Int> neighbours=new List<Vector2Int>();
         for (int x = coords.x-1; x <= coords.x+1; x++)
@@ -82,7 +82,6 @@ public class SweeperManager
                 }
             }
         }
-
         return count;
     }
 }

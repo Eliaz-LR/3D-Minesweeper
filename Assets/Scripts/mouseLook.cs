@@ -8,7 +8,7 @@ public class mouseLook : MonoBehaviour
     public Transform playerBody;
 
     //xRotation est la rotation autour de l'axe X
-    float xRotation = 0f;
+    float xRotation = 85f;
 
     // Start is called before the first frame update
     void Start()
