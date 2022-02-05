@@ -26,6 +26,7 @@ public class SweeperManager
         if (emplacementsMines.Contains(coords))
         {
             Debug.Log("! Mine trouvée !");
+            GameOver();
         }
         else
         {
@@ -83,5 +84,10 @@ public class SweeperManager
             }
         }
         return count;
+    }
+
+    private void GameOver()
+    {
+        GameObject.Find("StateManager").GetComponent<StateManager>().GameOver();
     }
 }

@@ -36,6 +36,7 @@ public class GridSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1f;
         Vector2Int coords = DifficultyGrid.getSize();
         x=coords.x;
         y=coords.y;

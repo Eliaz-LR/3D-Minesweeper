@@ -16,10 +16,10 @@ public class RayRecever : MonoBehaviour
     }
     public void Activate()
     {
+        Debug.Log("activation du cube " + coord);
         if (activated==false)
         {
             activated=true;
-            Debug.Log("activation du cube " + coord);
             // GetComponent<Renderer>().material = reaveled;
             GridSpawner gridSpawner=GameObject.Find("GridSpawner").GetComponent<GridSpawner>();
             gridSpawner.sweeperManager.Activate(coord);
