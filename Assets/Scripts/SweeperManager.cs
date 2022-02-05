@@ -49,9 +49,14 @@ public class SweeperManager
                 // Afficher le nombre de mines autour
                 squareObjectCollection[coords.x,coords.y].GetComponentInChildren<TextMeshPro>().text=nbMinesAround.ToString();
             }
-            
+            if (VictoryTest())
+            {
+                Debug.Log("Victory");
+                Victory();
+            }
         }
     }
+    
     public List<Vector2Int> GetNeighbouringCoords(Vector2Int coords)
     {
         List<Vector2Int> neighbours=new List<Vector2Int>();
@@ -85,7 +90,32 @@ public class SweeperManager
         }
         return count;
     }
-
+    private bool VictoryTest()
+    {
+        int count=0;
+        for (int x = 0; x < size.x; x++)
+        {
+            for (int y = 0; y < size.y; y++)
+            {
+                if (squareObjectCollection[x,y].GetComponentInChildren<RayRecever>().activated)
+                {
+                    count++;
+                }
+            }
+        }
+        if (count==size.x*size.y-nbMines)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    private void Victory()
+    {
+        GameObject.Find("StateManager").GetComponent<StateManager>().Victory();
+    }
     private void GameOver()
     {
         GameObject.Find("StateManager").GetComponent<StateManager>().GameOver();

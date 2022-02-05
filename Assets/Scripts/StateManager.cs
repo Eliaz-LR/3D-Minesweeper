@@ -5,10 +5,15 @@ using UnityEngine;
 public class StateManager : MonoBehaviour
 {
     public GameOver gameOver;
+    public Victory victory;
     public void GameOver()
     {
         MenuSetup();
         gameOver.Setup();
+    }
+    public void Victory()
+    {
+        MenuSetup();
     }
     private void MenuSetup()
     {
