@@ -22,6 +22,7 @@ public class SweeperManager
             sweeperGenerator=new SweeperGenerator(size,nbMines,this);
             emplacementsMines=sweeperGenerator.Generate(coords);
             Debug.Log("Generation de ce genre de grid mon gars");
+            GameObject.Find("Timer").GetComponent<Timer>().started=true;
         }
         if (emplacementsMines.Contains(coords))
         {

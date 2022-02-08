@@ -16,22 +16,33 @@ public class Pointer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1")||Input.GetButtonDown("Fire2"))
         {
-            Pointe();
+            RayRecever cible = GetObjPointe();
+            if (cible!=null)
+            {
+                if (Input.GetButtonDown("Fire1"))
+                {
+                    cible.Activate();
+                }
+                else if (Input.GetButtonDown("Fire2"))
+                {
+                    cible.flag();
+                }
+            }
         }
     }
 
-    void Pointe()
+    private RayRecever GetObjPointe()
     {
         RaycastHit hit_info;
         if (Physics.Raycast(transform.position,transform.forward,out hit_info, range))
         {
-            RayRecever cible = hit_info.transform.GetComponent<RayRecever>();
-            if (cible != null)
-            {
-                cible.Activate();
-            }
+            return hit_info.transform.GetComponent<RayRecever>();
+        }
+        else
+        {
+            return null;
         }
     }
 }
