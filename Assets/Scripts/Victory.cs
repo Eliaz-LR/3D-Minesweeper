@@ -19,7 +19,7 @@ public class Victory : MonoBehaviour
     {
         if (pseudoField.text!="")
         {
-            
+            SaveScoreToDatabase();
         }
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
@@ -29,6 +29,8 @@ public class Victory : MonoBehaviour
     }
     private void SaveScoreToDatabase()
     {
-        //RestClient.Post("https://demineur-3d-default-rtdb.europe-west1.firebasedatabase.app/.json");
+        Score score=new Score(DifficultyGrid.difficulty,pseudoField.text,GameObject.Find("Timer").GetComponent<Timer>().time);
+        Debug.Log(score.username);
+        RestClient.Post("https://demineur-3d-default-rtdb.europe-west1.firebasedatabase.app/.json",score);
     }
 }
