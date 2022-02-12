@@ -6,7 +6,7 @@ public static class DifficultyGrid
 {
     private static Vector2Int position;
     public static int nbMines{get;set;}
-    public static char difficulty{get;set;}//e,m,h
+    public static string difficulty{get;set;}
     public static Vector2Int getSize()
     {
         return position;
