@@ -23,7 +23,10 @@ public class Pointer : MonoBehaviour
             {
                 if (Input.GetButtonDown("Fire1"))
                 {
-                    cible.Activate();
+                    if (cible.flagged==false)
+                    {
+                        cible.Activate();
+                    }
                 }
                 else if (Input.GetButtonDown("Fire2"))
                 {

@@ -9,10 +9,11 @@ public class RayRecever : MonoBehaviour
     private Vector2Int coord;
     public bool activated=false;
     public bool flagged=false;
-
+    private Transform parent;
     public void setCoord(Vector2Int coord)
     {
         this.coord = coord;
+        parent = transform.parent;
     }
     public void Activate()
     {
@@ -20,6 +21,10 @@ public class RayRecever : MonoBehaviour
         if (activated==false)
         {
             activated=true;
+            if (flagged)
+            {
+                inverseFlag();
+            }
             // GetComponent<Renderer>().material = reaveled;
             GridSpawner gridSpawner=GameObject.Find("GridSpawner").GetComponent<GridSpawner>();
             gridSpawner.sweeperManager.Activate(coord);
@@ -30,18 +35,20 @@ public class RayRecever : MonoBehaviour
         Debug.Log("Flag "+coord);
         if (activated==false)
         {
-            Transform parent = transform.parent;
-            GameObject flag = parent.GetChild(2).gameObject;
-
-            if (flagged==false)
-            {
-                flag.SetActive(true);
-            }
-            else
-            {
-                flag.SetActive(false);
-            }
-            flagged=!flagged;
+            inverseFlag();
         }
+    }
+    public void inverseFlag()
+    {
+        GameObject flag = parent.GetChild(2).gameObject;
+        if (flagged==false)
+        {
+            flag.SetActive(true);
+        }
+        else
+        {
+            flag.SetActive(false);
+        }
+        flagged=!flagged;
     }
 }
