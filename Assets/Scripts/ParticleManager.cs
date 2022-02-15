@@ -13,11 +13,11 @@ public class ParticleManager
         this.emplacementsMines = emplacementsMines;
     }
 
-    void ParticuleGameOver()
+    public void ParticuleGameOver()
     {
-        foreach (emplacementsMines)
+        foreach (Vector2Int mines in emplacementsMines)
         {
-            squareObjectCollection[emplacementsMines.x,emplacementsMines.y]
+            squareObjectCollection[mines.x,mines.y].GetComponentInChildren<ParticleSystem>().Play();
         }
     }
 

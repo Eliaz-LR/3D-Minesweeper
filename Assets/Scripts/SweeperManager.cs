@@ -9,7 +9,7 @@ public class SweeperManager
     private List<Vector2Int> emplacementsMines;
     SweeperGenerator sweeperGenerator=null;
     public GameObject[,] squareObjectCollection {get; set;}
-
+    ParticleManager particleManager;
     public SweeperManager(Vector2Int size, int nbMines)
     {
         this.size = size;
@@ -119,6 +119,8 @@ public class SweeperManager
     }
     private void GameOver()
     {
+        particleManager=new ParticleManager(squareObjectCollection,emplacementsMines);
+        particleManager.ParticuleGameOver();
         GameObject.Find("StateManager").GetComponent<StateManager>().GameOver();
     }
 }
