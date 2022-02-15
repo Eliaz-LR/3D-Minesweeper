@@ -115,6 +115,8 @@ public class SweeperManager
     }
     private void Victory()
     {
+        particleManager = new ParticleManager(squareObjectCollection, emplacementsMines);
+        particleManager.ParticuleWin();
         GameObject.Find("StateManager").GetComponent<StateManager>().Victory();
     }
     private void GameOver()

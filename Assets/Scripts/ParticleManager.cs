@@ -21,10 +21,11 @@ public class ParticleManager
         }
     }
 
-    void ParticuleWin()
+    public void ParticuleWin()
     {
-
+        foreach (Vector2Int mines in emplacementsMines)
+        {
+            squareObjectCollection[mines.x, mines.y].GetComponentInChildren<ParticleSystem>().Play();
+        }
     }
-
-  
 }
