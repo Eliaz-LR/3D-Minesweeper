@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Highscore
 {
-    float time;
-    string name;
-    int rank;
+    public float time;
+    public string name;
+    public int rank;
     
 }
