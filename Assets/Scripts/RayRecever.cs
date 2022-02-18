@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class RayRecever : MonoBehaviour
 {
@@ -10,10 +11,12 @@ public class RayRecever : MonoBehaviour
     public bool activated=false;
     public bool flagged=false;
     private Transform parent;
+    private GridSpawner gridSpawner;
     public void setCoord(Vector2Int coord)
     {
         this.coord = coord;
         parent = transform.parent;
+        gridSpawner=GameObject.Find("GridSpawner").GetComponent<GridSpawner>();
     }
     public void Activate()
     {
@@ -26,7 +29,6 @@ public class RayRecever : MonoBehaviour
                 inverseFlag();
             }
             // GetComponent<Renderer>().material = reaveled;
-            GridSpawner gridSpawner=GameObject.Find("GridSpawner").GetComponent<GridSpawner>();
             gridSpawner.sweeperManager.Activate(coord);
         }
     }
@@ -37,6 +39,7 @@ public class RayRecever : MonoBehaviour
         {
             inverseFlag();
         }
+        updateFlagNumber();
     }
     public void inverseFlag()
     {
@@ -50,5 +53,10 @@ public class RayRecever : MonoBehaviour
             flag.SetActive(false);
         }
         flagged=!flagged;
+    }
+    private void updateFlagNumber()
+    {
+        TMP_Text flagNumber = GameObject.Find("Text flag num").GetComponent<TMP_Text>();
+        flagNumber.text = gridSpawner.sweeperManager.getNumberofFlags().ToString();
     }
 }

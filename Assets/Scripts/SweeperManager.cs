@@ -113,6 +113,22 @@ public class SweeperManager
             return false;
         }
     }
+
+    public int getNumberofFlags()
+    {
+        int count=0;
+        for (int x = 0; x < size.x; x++)
+        {
+            for (int y = 0; y < size.y; y++)
+            {
+                if (squareObjectCollection[x,y].GetComponentInChildren<RayRecever>().flagged)
+                {
+                    count++;
+                }
+            }
+        }
+        return DifficultyGrid.nbMines - count -1;
+    }
     private void Victory()
     {
         particleManager = new ParticleManager(squareObjectCollection, emplacementsMines);
