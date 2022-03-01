@@ -28,17 +28,7 @@ public class DifficultyChoice : MonoBehaviour
     }
     private void PlayGame()
     {
-        if(DifficultyGrid.difficulty=="easy")
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
-        else if (DifficultyGrid.difficulty == "medium")
-        {
-            SceneManager.LoadScene("GameMedium");
-        }
-        else if (DifficultyGrid.difficulty == "hard")
-        {
-            SceneManager.LoadScene("GameHard");
-        }          
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
