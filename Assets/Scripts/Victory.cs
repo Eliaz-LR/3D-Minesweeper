@@ -29,39 +29,27 @@ public class Victory : MonoBehaviour
     }
     private void SaveScore()
     {
-        Score score=new Score(GameObject.Find("Timer").GetComponent<Timer>().time,pseudoField.text);
-        List<Score> checkDB = RetriveFromDatabase();
+        Score score=new Score(GameObject.Find("Timer").GetComponent<Timer>().time);
+        Score checkDB = RetriveFromDatabase();
         if (checkDB==null)
         {
-
-            checkDB = new List<Score>();
-            checkDB.Add(score);
-            PushToDatabase(checkDB);
+            PushToDatabase(score);
         }
         else
         {
-            checkDB.Add(score);
-            PushToDatabase(checkDB);
-            // if (score.time<checkDB.time)
-            // {
-            //     PushToDatabase(score);
-            // }
+            if (score.time<checkDB.time)
+            {
+                PushToDatabase(score);
+            }
         }
     }
     private void PushToDatabase(Score score)
     {
         RestClient.Put("https://demineur-3d-default-rtdb.europe-west1.firebasedatabase.app/"+DifficultyGrid.difficulty+"/"+pseudoField.text+".json",score);
     }
-    private void PushToDatabase(List<Score> scores)
+    private Score RetriveFromDatabase()
     {
-        Debug.Log(scores.Count);
-        string json = JsonUtility.ToJson(scores);
-        Debug.Log(json);
-        RestClient.Put("https://demineur-3d-default-rtdb.europe-west1.firebasedatabase.app/"+DifficultyGrid.difficulty+".json",json);
-    }
-    private List<Score> RetriveFromDatabase()
-    {
-        RestClient.GetArray<Score>("https://demineur-3d-default-rtdb.europe-west1.firebasedatabase.app/"+DifficultyGrid.difficulty+".json").Then(response =>
+        RestClient.Get<Score>("https://demineur-3d-default-rtdb.europe-west1.firebasedatabase.app/"+DifficultyGrid.difficulty+"/"+pseudoField.text+".json").Then(response =>
         {
             return response;
         });
