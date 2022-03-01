@@ -21,25 +21,10 @@ public class HighscoresMenu : MonoBehaviour
         RestClient.Get("https://demineur-3d-default-rtdb.europe-west1.firebasedatabase.app/" + difficulty + ".json").Then(response =>
         {
             json = response.Text;
-            //Highscore[] highscores = JsonParser.Parse(json);
+            // Debug.Log(json);
+            Highscore[] highscores = JsonParser.Parse(json);
+            // Debug.Log(highscores);
         }).Catch(err => Debug.LogError(err.Message));
     }
 
-    // private IEnumerator RetriveFromDatabase(string difficulty)
-    // {
-    //     var running = true;
-    //     RestClient.Get("https://demineur-3d-default-rtdb.europe-west1.firebasedatabase.app/" + difficulty + ".json").Then(response =>
-    //     {
-    //         json = response.Text;
-    //         running = false;
-    //     }).Catch(err => Debug.LogError(err.Message));
-
-    //     Debug.Log("Waiting...");
-    //     while (running)
-    //     {
-    //         yield return new WaitForSeconds(0.01f);
-    //     }
-    //     Debug.Log("Done!");
-    //     Debug.Log(json);
-    // }
 }
