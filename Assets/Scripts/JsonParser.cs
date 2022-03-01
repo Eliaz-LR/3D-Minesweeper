@@ -9,8 +9,7 @@ public static class JsonParser
         
         toParse = toParse.Substring(1, toParse.Length - 2);
         string[] scores = toParse.Split(',');
-        Debug.Log(scores[0]);
-        Highscore[] highscores = new Highscore[scores.Length+1];
+        Highscore[] highscores = new Highscore[scores.Length];
         for (int i = 0; i < scores.Length; i++)
         {
             //"Eliaz":{"time":44.39243698120117}
