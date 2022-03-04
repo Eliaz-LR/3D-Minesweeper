@@ -30,18 +30,7 @@ public class Victory : MonoBehaviour
     private void SaveScore()
     {
         Score score=new Score(GameObject.Find("Timer").GetComponent<Timer>().time);
-        Score checkDB = RetriveFromDatabase();
-        if (checkDB==null)
-        {
-            PushToDatabase(score);
-        }
-        else
-        {
-            if (score.time<checkDB.time)
-            {
-                PushToDatabase(score);
-            }
-        }
+        CompareWithDatabase(score);
     }
     private void PushToDatabase(Score score)
     {
@@ -54,5 +43,15 @@ public class Victory : MonoBehaviour
             return response;
         });
         return null;
+    }
+    private void CompareWithDatabase(Score score)
+    {
+        RestClient.Get<Score>("https://demineur-3d-default-rtdb.europe-west1.firebasedatabase.app/"+DifficultyGrid.difficulty+"/"+pseudoField.text+".json").Then(response =>
+        {
+            if (score.time<response.time)
+            {
+                PushToDatabase(score);
+            }
+        });
     }
 }
