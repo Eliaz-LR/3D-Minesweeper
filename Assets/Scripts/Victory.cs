@@ -42,8 +42,13 @@ public class Victory : MonoBehaviour
         {
             if (score.time<response.time)
             {
+                Debug.Log("score pushed");
                 PushToDatabase(score);
             }
+            return;
+        }).Catch(err=>{
+            Debug.Log("score pushed err");
+            PushToDatabase(score);
         });
     }
 }
