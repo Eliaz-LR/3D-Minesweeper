@@ -6,6 +6,11 @@ public class GridSpawner : MonoBehaviour
 {
     Vector3 position;
     public GameObject prefab;
+
+    public GameObject decorEasy;
+    public GameObject decorMedium;
+    public GameObject decorHard;
+
     public int x=8;
     public int y=8;
     public SweeperManager sweeperManager;
@@ -33,6 +38,22 @@ public class GridSpawner : MonoBehaviour
         sweeperManager=new SweeperManager(new Vector2Int(x,y),nbMines);
     }
 
+    private void SpawnDecor()
+    {
+        if(DifficultyGrid.difficulty=="easy")
+        {
+            decorEasy.SetActive(true);
+        }
+        else if (DifficultyGrid.difficulty == "medium")
+        {
+            decorMedium.SetActive(true);
+        }
+        else
+        {
+            decorHard.SetActive(true);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +64,7 @@ public class GridSpawner : MonoBehaviour
 
         ManagerInit();
         SpawnGrid();
+        SpawnDecor();
     }
 
     // Update is called once per frame
