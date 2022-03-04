@@ -25,7 +25,7 @@ public class ParticleManager
     {
         foreach (Vector2Int mines in emplacementsMines)
         {
-            squareObjectCollection[mines.x, mines.y].GetComponentInChildren<ParticleSystem>().Play();
+            squareObjectCollection[mines.x, mines.y].transform.Find("Confetti").GetComponent<ParticleSystem>().Play();
         }
     }
 }
