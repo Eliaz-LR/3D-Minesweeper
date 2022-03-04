@@ -36,14 +36,6 @@ public class Victory : MonoBehaviour
     {
         RestClient.Put("https://demineur-3d-default-rtdb.europe-west1.firebasedatabase.app/"+DifficultyGrid.difficulty+"/"+pseudoField.text+".json",score);
     }
-    private Score RetriveFromDatabase()
-    {
-        RestClient.Get<Score>("https://demineur-3d-default-rtdb.europe-west1.firebasedatabase.app/"+DifficultyGrid.difficulty+"/"+pseudoField.text+".json").Then(response =>
-        {
-            return response;
-        });
-        return null;
-    }
     private void CompareWithDatabase(Score score)
     {
         RestClient.Get<Score>("https://demineur-3d-default-rtdb.europe-west1.firebasedatabase.app/"+DifficultyGrid.difficulty+"/"+pseudoField.text+".json").Then(response =>
