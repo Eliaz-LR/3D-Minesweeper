@@ -65,6 +65,7 @@ public class GridSpawner : MonoBehaviour
         ManagerInit();
         SpawnGrid();
         SpawnDecor();
+        squareObjectCollection[0,0].GetComponentInChildren<RayRecever>().updateFlagNumber();
     }
 
     // Update is called once per frame

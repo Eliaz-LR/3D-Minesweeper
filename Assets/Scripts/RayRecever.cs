@@ -54,7 +54,7 @@ public class RayRecever : MonoBehaviour
         }
         flagged=!flagged;
     }
-    private void updateFlagNumber()
+    public void updateFlagNumber()
     {
         TMP_Text flagNumber = GameObject.Find("Text flag num").GetComponent<TMP_Text>();
         flagNumber.text = gridSpawner.sweeperManager.getNumberofFlags().ToString();
