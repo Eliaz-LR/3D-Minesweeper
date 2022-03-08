@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -33,23 +34,34 @@ public class PlayerMovement : MonoBehaviour
             velocity.y=-2f;
         }
 
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+        // float x = Input.GetAxis("Horizontal");
+        // float z = Input.GetAxis("Vertical");
 
-        //transform = coordonnées relatives. Vector3 = coordonnées absolues.
-        Vector3 move = transform.right*x + transform.forward*z;
+        // //transform = coordonnées relatives. Vector3 = coordonnées absolues.
+        // Vector3 move = transform.right*x + transform.forward*z;
 
-        controller.Move(move*speed*Time.deltaTime);
+        // controller.Move(move*speed*Time.deltaTime);
 
-        if(Input.GetButtonDown("Jump") && isGrounded)
-        {
-            //la formule suivante permet d'avoir la vitesse requise pour atteindre pile jumpHeight.
-            velocity.y=Mathf.Sqrt(jumpHeight*-2f*gravity);
-        }
 
         //Gravité = acceleration = vitesse*temps² (le ² est fait en multipliant par le temps deux fois)
         velocity.y += gravity*Time.deltaTime;
 
         controller.Move(velocity*Time.deltaTime);
+    }
+
+    public void onMove(InputAction.CallbackContext context)
+    {
+
+        Vector2 inputVector = context.ReadValue<Vector2>();
+        Vector3 moveDir = transform.right*inputVector.normalized.x + transform.forward*inputVector.normalized.y;
+        controller.Move(moveDir*speed);
+    }
+
+    public void onJump(InputAction.CallbackContext context)
+    {
+        if (context.performed && isGrounded)
+        {
+            velocity.y=Mathf.Sqrt(jumpHeight*-2f*gravity);
+        }
     }
 }
