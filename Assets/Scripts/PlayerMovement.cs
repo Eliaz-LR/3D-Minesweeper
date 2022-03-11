@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 velocity;
     Vector3 move;
+    Vector2 inputVector;
     bool isGrounded;
 
     // Start is called before the first frame update
@@ -41,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
         // //transform = coordonnées relatives. Vector3 = coordonnées absolues.
         // Vector3 move = transform.right*x + transform.forward*z;
 
+        move = transform.right*inputVector.x + transform.forward*inputVector.y;
         controller.Move(move*speed*Time.deltaTime);
 
 
@@ -52,9 +54,11 @@ public class PlayerMovement : MonoBehaviour
 
     public void onMove(InputAction.CallbackContext context)
     {
-
-        Vector2 inputVector = context.ReadValue<Vector2>();
-        move = transform.right*inputVector.normalized.x + transform.forward*inputVector.normalized.y;
+        inputVector = context.ReadValue<Vector2>();
+        if (inputVector.magnitude > 1)
+        {
+            inputVector.Normalize();
+        }
     }
 
     public void onJump(InputAction.CallbackContext context)

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class mouseLook : MonoBehaviour
 {
@@ -20,16 +21,28 @@ public class mouseLook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        // float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        // float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
 
-        xRotation -= mouseY;
+        // xRotation -= mouseY;
+        // xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+
+        // //rotation haut/bas -> juste sur la camera
+        // transform.localRotation = Quaternion.Euler(xRotation,0f,0f);
+        // //rotation gauche/droite -> sur le player
+        // playerBody.Rotate(Vector3.up * mouseX);
+    }
+    public void onMouseMove(InputAction.CallbackContext context)
+    {
+        Vector2 inputVector = context.ReadValue<Vector2>();
+        inputVector = inputVector*mouseSensitivity*Time.deltaTime;
+        xRotation -= inputVector.y;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
         //rotation haut/bas -> juste sur la camera
         transform.localRotation = Quaternion.Euler(xRotation,0f,0f);
         //rotation gauche/droite -> sur le player
-        playerBody.Rotate(Vector3.up * mouseX);
+        playerBody.Rotate(Vector3.up * inputVector.x);
     }
 }
