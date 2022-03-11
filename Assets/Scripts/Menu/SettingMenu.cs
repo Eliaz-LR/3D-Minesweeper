@@ -22,5 +22,10 @@ public class SettingMenu : MonoBehaviour
         Screen.fullScreen = isFullScreen;
     }
 
+    public void SetSensitivity(float sensitivity)
+    {
+        StaticSettings.mouseSensitivity = sensitivity;
+    }
+
 }
 

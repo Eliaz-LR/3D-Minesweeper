@@ -16,6 +16,7 @@ public class mouseLook : MonoBehaviour
     {
         //On cache la souris
         Cursor.lockState = CursorLockMode.Locked;
+        mouseSensitivity = StaticSettings.mouseSensitivity;
     }
 
     // Update is called once per frame
