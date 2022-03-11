@@ -337,6 +337,17 @@
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f006ab96-8149-44bf-875d-bf82b683f9c5",
+                    "path": "*/{SecondaryAction}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR",
+                    "action": "Flag",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
