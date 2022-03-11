@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundMask;
 
     Vector3 velocity;
+    Vector3 move;
     bool isGrounded;
 
     // Start is called before the first frame update
@@ -40,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
         // //transform = coordonnées relatives. Vector3 = coordonnées absolues.
         // Vector3 move = transform.right*x + transform.forward*z;
 
-        // controller.Move(move*speed*Time.deltaTime);
+        controller.Move(move*speed*Time.deltaTime);
 
 
         //Gravité = acceleration = vitesse*temps² (le ² est fait en multipliant par le temps deux fois)
@@ -53,8 +54,7 @@ public class PlayerMovement : MonoBehaviour
     {
 
         Vector2 inputVector = context.ReadValue<Vector2>();
-        Vector3 moveDir = transform.right*inputVector.normalized.x + transform.forward*inputVector.normalized.y;
-        controller.Move(moveDir*speed);
+        move = transform.right*inputVector.normalized.x + transform.forward*inputVector.normalized.y;
     }
 
     public void onJump(InputAction.CallbackContext context)
