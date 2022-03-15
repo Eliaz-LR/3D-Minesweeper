@@ -4,5 +4,11 @@ using UnityEngine;
 
 public static class StaticSettings
 {
-   public static float mouseSensitivity {get; set;}
+   public static float mouseSensitivity{get; set;}
+
+
+   static StaticSettings()
+   {
+      mouseSensitivity = 25;
+   }
 }
