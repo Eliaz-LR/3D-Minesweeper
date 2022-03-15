@@ -7,36 +7,6 @@ public class Pointer : MonoBehaviour
 {
     public float range = 10f;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        // if (Input.GetButtonDown("Fire1")||Input.GetButtonDown("Fire2"))
-        // {
-        //     RayRecever cible = GetObjPointe();
-        //     if (cible!=null)
-        //     {
-        //         if (Input.GetButtonDown("Fire1"))
-        //         {
-        //             if (cible.flagged==false)
-        //             {
-        //                 cible.Activate();
-        //             }
-        //         }
-        //         else if (Input.GetButtonDown("Fire2"))
-        //         {
-        //             cible.flag();
-        //         }
-        //     }
-        // }
-    }
-
     public void OnFlagKey(InputAction.CallbackContext context)
     {
         RayRecever cible = GetObjPointe();
