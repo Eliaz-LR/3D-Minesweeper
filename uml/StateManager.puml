@@ -1,0 +1,11 @@
+@startuml
+class StateManager {
+    + gameOver : GameOver
+    + victory : Victory
+    + GameOver() : void
+    + Victory() : void
+    - MenuSetup() : void
+    - MenuQuit() : void
+}
+MonoBehaviour <|-- StateManager
+@enduml

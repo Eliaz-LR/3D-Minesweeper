@@ -1,0 +1,20 @@
+@startuml
+class PlayerMovement {
+    + controller : CharacterController
+    + speed : float = 12f
+    + gravity : float
+    + jumpHeight : float = 3f
+    + groundCheck : Transform
+    + groundDistance : float = 0.4f
+    + groundMask : LayerMask
+    velocity : Vector3
+    move : Vector3
+    inputVector : Vector2
+    isGrounded : bool
+    Start() : void
+    Update() : void
+    + onMove(context:InputAction.CallbackContext) : void
+    + onJump(context:InputAction.CallbackContext) : void
+}
+MonoBehaviour <|-- PlayerMovement
+@enduml

@@ -1,0 +1,16 @@
+@startuml
+class RayRecever {
+    + reaveled : Material
+    - coord : Vector2Int
+    + activated : bool = false
+    + flagged : bool = false
+    - parent : Transform
+    - gridSpawner : GridSpawner
+    + setCoord(coord:Vector2Int) : void
+    + Activate() : void
+    + flag() : void
+    + inverseFlag() : void
+    + updateFlagNumber() : void
+}
+MonoBehaviour <|-- RayRecever
+@enduml

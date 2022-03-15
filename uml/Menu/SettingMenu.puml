@@ -1,0 +1,13 @@
+@startuml
+class SettingMenu {
+    + audioMixer : AudioMixer
+    + volSlider : GameObject
+    + sensiSlider : GameObject
+    - Awake() : void
+    + SetVolume(volume:float) : void
+    + SetQuality(qualityIndex:int) : void
+    + SetFullscreen(isFullScreen:bool) : void
+    + SetSensitivity(sensitivity:float) : void
+}
+MonoBehaviour <|-- SettingMenu
+@enduml

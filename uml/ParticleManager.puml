@@ -1,0 +1,9 @@
+@startuml
+class ParticleManager {
+    + squareObjectCollection : GameObject[,] <<get>> <<set>>
+    - emplacementsMines : List<Vector2Int>
+    + ParticleManager(squareObjectCollection:GameObject[,], emplacementsMines:List<Vector2Int>)
+    + ParticuleGameOver() : void
+    + ParticuleWin() : void
+}
+@enduml

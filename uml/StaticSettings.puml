@@ -1,0 +1,6 @@
+@startuml
+class StaticSettings <<static>> {
+    + {static} mouseSensitivity : float <<get>> <<set>>
+    {static} StaticSettings()
+}
+@enduml

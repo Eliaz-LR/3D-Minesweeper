@@ -1,0 +1,6 @@
+@startuml
+class Score {
+    + time : float
+    + Score(time:float)
+}
+@enduml

@@ -1,0 +1,19 @@
+@startuml
+class GridSpawner {
+    position : Vector3
+    + prefab : GameObject
+    + decorEasy : GameObject
+    + decorMedium : GameObject
+    + decorHard : GameObject
+    + x : int = 8
+    + y : int = 8
+    + sweeperManager : SweeperManager
+    + squareObjectCollection : GameObject[,]
+    - SpawnGrid() : void
+    - ManagerInit() : void
+    - SpawnDecor() : void
+    Start() : void
+    Update() : void
+}
+MonoBehaviour <|-- GridSpawner
+@enduml

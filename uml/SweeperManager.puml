@@ -1,0 +1,18 @@
+@startuml
+class SweeperManager {
+    - size : Vector2Int
+    - nbMines : int
+    - emplacementsMines : List<Vector2Int>
+    sweeperGenerator : SweeperGenerator = null
+    + squareObjectCollection : GameObject[,] <<get>> <<set>>
+    particleManager : ParticleManager
+    + SweeperManager(size:Vector2Int, nbMines:int)
+    + Activate(coords:Vector2Int) : void
+    + GetNeighbouringCoords(coords:Vector2Int) : List<Vector2Int>
+    - GetNumberOfNeighbouringMines(coords:Vector2Int) : int
+    - VictoryTest() : bool
+    + getNumberofFlags() : int
+    - Victory() : void
+    - GameOver() : void
+}
+@enduml

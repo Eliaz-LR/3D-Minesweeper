@@ -1,0 +1,11 @@
+@startuml
+class Timer {
+    mText : TextMeshProUGUI
+    + time : float = 0f
+    timer : TimeSpan
+    + started : bool = false
+    Start() : void
+    Update() : void
+}
+MonoBehaviour <|-- Timer
+@enduml

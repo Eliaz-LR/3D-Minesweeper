@@ -1,0 +1,6 @@
+@startuml
+class MenuPrincipal {
+    + Exit() : void
+}
+MonoBehaviour <|-- MenuPrincipal
+@enduml

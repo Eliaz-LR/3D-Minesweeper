@@ -24,6 +24,6 @@ public class StateManager : MonoBehaviour
     }
     private void MenuQuit()
     {
-
+        
     }
 }

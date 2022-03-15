@@ -1,0 +1,9 @@
+@startuml
+class DifficultyChoice {
+    + Easy() : void
+    + Medium() : void
+    + Hard() : void
+    - PlayGame() : void
+}
+MonoBehaviour <|-- DifficultyChoice
+@enduml

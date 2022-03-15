@@ -1,0 +1,8 @@
+@startuml
+class GameOver {
+    + menuButton : Button
+    + ReturnToMenu() : void
+    + Setup() : void
+}
+MonoBehaviour <|-- GameOver
+@enduml

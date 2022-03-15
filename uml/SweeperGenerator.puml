@@ -1,0 +1,12 @@
+@startuml
+class SweeperGenerator {
+    - size : Vector2Int
+    - nbMines : int
+    - emplacementsMines : List<Vector2Int>
+    - sweeperManager : SweeperManager
+    + SweeperGenerator(size:Vector2Int, numberOfMines:int, sweeperManager:SweeperManager)
+    + Generate(coordInitClick:Vector2Int) : List<Vector2Int>
+    - ClickAround(coordInitClick:Vector2Int, mineX:int, mineY:int) : bool
+    - CaseIsFree(randX:int, randY:int, coordInitClick:Vector2Int) : bool
+}
+@enduml

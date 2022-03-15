@@ -1,0 +1,13 @@
+@startuml
+class Victory {
+    + menuButton : Button
+    + pseudoField : TMP_InputField
+    + Setup() : void
+    + ReturnToMenuButton() : void
+    - ReturnToMenuField(oui:string) : void
+    - SaveScore() : void
+    - PushToDatabase(score:Score) : void
+    - CompareWithDatabase(score:Score) : void
+}
+MonoBehaviour <|-- Victory
+@enduml

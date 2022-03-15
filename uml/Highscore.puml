@@ -1,0 +1,8 @@
+@startuml
+class Highscore {
+    + time : float
+    + name : string
+    + rank : int
+    + Highscore(name:string, time:float)
+}
+@enduml

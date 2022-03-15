@@ -1,0 +1,9 @@
+@startuml
+class Pause {
+    + {static} GameIsPaused : bool = false
+    + PauseKey(context:InputAction.CallbackContext) : void
+    - PauseGame() : void
+    + Resume() : void
+}
+MonoBehaviour <|-- Pause
+@enduml

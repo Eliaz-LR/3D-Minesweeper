@@ -1,0 +1,24 @@
+@startuml
+!include .\\GameOver.puml
+!include .\\GridSpawner.puml
+!include .\\Highscore.puml
+!include .\\JsonParser.puml
+!include .\\mouseLook.puml
+!include .\\ParticleManager.puml
+!include .\\Pause.puml
+!include .\\PlayerMovement.puml
+!include .\\Pointer.puml
+!include .\\RayRecever.puml
+!include .\\Score.puml
+!include .\\StateManager.puml
+!include .\\StaticDifficultyGrid.puml
+!include .\\StaticSettings.puml
+!include .\\SweeperGenerator.puml
+!include .\\SweeperManager.puml
+!include .\\Timer.puml
+!include .\\Victory.puml
+!include .\\Menu\DifficultyChoice.puml
+!include .\\Menu\HighscoresMenu.puml
+!include .\\Menu\MenuPrincipal.puml
+!include .\\Menu\SettingMenu.puml
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class Pointer {
+    + range : float = 10f
+    Start() : void
+    Update() : void
+    + OnFlagKey(context:InputAction.CallbackContext) : void
+    + OnFireKey(context:InputAction.CallbackContext) : void
+    - GetObjPointe() : RayRecever
+}
+MonoBehaviour <|-- Pointer
+@enduml

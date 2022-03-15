@@ -1,0 +1,9 @@
+@startuml
+class DifficultyGrid <<static>> {
+    - {static} position : Vector2Int
+    + {static} nbMines : int <<get>> <<set>>
+    + {static} difficulty : string <<get>> <<set>>
+    + {static} getSize() : Vector2Int
+    + {static} setSize(x:int, y:int) : void
+}
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class mouseLook {
+    + mouseSensitivity : float = 100f
+    + playerBody : Transform
+    xRotation : float = 85f
+    Start() : void
+    Update() : void
+    + onMouseMove(context:InputAction.CallbackContext) : void
+}
+MonoBehaviour <|-- mouseLook
+@enduml

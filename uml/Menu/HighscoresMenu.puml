@@ -1,0 +1,13 @@
+@startuml
+class HighscoresMenu {
+    + difficulty : TMP_Dropdown
+    - entryTemplate : Transform
+    - json : string
+    - Awake() : void
+    - GetHighscores() : IEnumerator
+    - RetriveFromDatabase(difficulty:string) : void
+    - AddRank(highscores:Highscore[]) : Highscore[]
+    - DisplayHighscores(highscores:Highscore[]) : void
+}
+MonoBehaviour <|-- HighscoresMenu
+@enduml
