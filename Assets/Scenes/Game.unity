@@ -4328,6 +4328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e497b4c7ae713b744b126f6241267b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenuUI: {fileID: 321380988}
 --- !u!1001 &326321743
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28372,7 +28373,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1413818189}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 321380990}
+        m_TargetAssemblyTypeName: Pause, Assembly-CSharp
+        m_MethodName: ReturnToMenuButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1413818189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32684,8 +32697,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 321380990}
         m_TargetAssemblyTypeName: Pause, Assembly-CSharp
-        m_MethodName: PauseKey
-        m_Mode: 0
+        m_MethodName: PauseToggle
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -43314,7 +43327,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2120013587}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 321380990}
+        m_TargetAssemblyTypeName: Pause, Assembly-CSharp
+        m_MethodName: PauseToggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2120013587
 MonoBehaviour:
   m_ObjectHideFlags: 0
