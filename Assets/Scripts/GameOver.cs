@@ -8,6 +8,7 @@ public class GameOver : MonoBehaviour
 {
 
     public Button menuButton;
+    
     public void ReturnToMenu()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
