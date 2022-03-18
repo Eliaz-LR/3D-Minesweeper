@@ -16,5 +16,5 @@ class PlayerMovement {
     + onMove(context:InputAction.CallbackContext) : void
     + onJump(context:InputAction.CallbackContext) : void
 }
-MonoBehaviour <|-- PlayerMovement
+
 @enduml

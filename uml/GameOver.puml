@@ -4,5 +4,5 @@ class GameOver {
     + ReturnToMenu() : void
     + Setup() : void
 }
-MonoBehaviour <|-- GameOver
+
 @enduml

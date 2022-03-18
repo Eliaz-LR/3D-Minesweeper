@@ -15,5 +15,7 @@ class GridSpawner {
     Start() : void
     Update() : void
 }
-MonoBehaviour <|-- GridSpawner
+GridSpawner --> "1" SweeperManager
+GridSpawner ..> "*" RayRecever
+GridSpawner ..> DifficultyGrid
 @enduml

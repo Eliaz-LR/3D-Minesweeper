@@ -2,4 +2,5 @@
 class JsonParser <<static>> {
     + {static} Parse(toParse:string) : Highscore[]
 }
+JsonParser ..> Highscore
 @enduml

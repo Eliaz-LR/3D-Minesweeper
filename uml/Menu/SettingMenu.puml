@@ -9,5 +9,5 @@ class SettingMenu {
     + SetFullscreen(isFullScreen:bool) : void
     + SetSensitivity(sensitivity:float) : void
 }
-MonoBehaviour <|-- SettingMenu
+SettingMenu ..> StaticSettings
 @enduml

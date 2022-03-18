@@ -7,5 +7,5 @@ class Pointer {
     + OnFireKey(context:InputAction.CallbackContext) : void
     - GetObjPointe() : RayRecever
 }
-MonoBehaviour <|-- Pointer
+Pointer --> "*" RayRecever
 @enduml
