@@ -9,6 +9,6 @@ public static class StaticSettings
 
    static StaticSettings()
    {
-      mouseSensitivity = 25;
+      mouseSensitivity = 12;
    }
 }
