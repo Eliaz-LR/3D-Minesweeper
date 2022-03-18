@@ -1,10 +1,10 @@
 # demineur-3d
 
-This project is a simple minesweeper... in 3D with a leaderboard.
+This project is a simple minesweeper... in 3D with an online leaderboard.
 
-Projet : Démineur en 3D sur Unity
+Made with Unity.
 
-Auteurs : Eliaz LE RICHE / Martin MAULUS
+By Eliaz LE RICHE and Martin MAULUS.
 
 [Playable online with no download](https://play.unity.com/mg/other/webgl-build-482)
 
@@ -13,13 +13,9 @@ Auteurs : Eliaz LE RICHE / Martin MAULUS
 Leaderboard relié sur une base de données firebase. 
 
 ## Diagramme de classe : 
-
-	Attention : certaines cardinatlités de certaines classes sont cachés par les flèches.
+![Diagramme de classe](./uml-output/include.png)
+Note : certaines cardinatlités de certaines classes sont cachés par les flèches.
 
 ## En jeu : 
-
-	Attention : - si la sensisibilité est trop élevée, allez dans les "Settings" pour la changer
-                - ne pas oublier de cocher la case pleine écran
-
-
-
+	- si la sensisibilité est trop élevée, allez dans les "Settings" pour la changer
+	- ne pas oublier de cocher la case pleine écran
