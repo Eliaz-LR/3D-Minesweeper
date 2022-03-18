@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1549,10 +1549,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1510605439}
   m_HandleRect: {fileID: 305231813}
   m_Direction: 0
-  m_MinValue: 1
-  m_MaxValue: 50
+  m_MinValue: 0.5
+  m_MaxValue: 25
   m_WholeNumbers: 0
-  m_Value: 25
+  m_Value: 12
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -3822,7 +3822,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1 &879398195
 GameObject:
   m_ObjectHideFlags: 0
