@@ -15,4 +15,7 @@ class SweeperManager {
     - Victory() : void
     - GameOver() : void
 }
+SweeperManager --> "1" ParticleManager
+SweeperManager ..> "1" Timer
+SweeperManager ..> "*" RayRecever
 @enduml

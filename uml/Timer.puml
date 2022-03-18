@@ -7,5 +7,4 @@ class Timer {
     Start() : void
     Update() : void
 }
-MonoBehaviour <|-- Timer
 @enduml

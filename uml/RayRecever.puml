@@ -12,5 +12,5 @@ class RayRecever {
     + inverseFlag() : void
     + updateFlagNumber() : void
 }
-MonoBehaviour <|-- RayRecever
+RayRecever --> "1" GridSpawner
 @enduml

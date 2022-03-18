@@ -9,5 +9,5 @@ class HighscoresMenu {
     - AddRank(highscores:Highscore[]) : Highscore[]
     - DisplayHighscores(highscores:Highscore[]) : void
 }
-MonoBehaviour <|-- HighscoresMenu
+HighscoresMenu ..> JsonParser
 @enduml

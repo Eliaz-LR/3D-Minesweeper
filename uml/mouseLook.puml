@@ -7,5 +7,5 @@ class mouseLook {
     Update() : void
     + onMouseMove(context:InputAction.CallbackContext) : void
 }
-MonoBehaviour <|-- mouseLook
+mouseLook ..> StaticSettings
 @enduml

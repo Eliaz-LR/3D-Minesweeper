@@ -5,5 +5,5 @@ class DifficultyChoice {
     + Hard() : void
     - PlayGame() : void
 }
-MonoBehaviour <|-- DifficultyChoice
+DifficultyChoice ..> DifficultyGrid
 @enduml

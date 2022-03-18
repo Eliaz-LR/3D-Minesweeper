@@ -9,5 +9,5 @@ class Victory {
     - PushToDatabase(score:Score) : void
     - CompareWithDatabase(score:Score) : void
 }
-MonoBehaviour <|-- Victory
+Victory --> "0..1" Score
 @enduml

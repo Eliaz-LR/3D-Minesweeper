@@ -5,5 +5,5 @@ class Pause {
     - PauseGame() : void
     + Resume() : void
 }
-MonoBehaviour <|-- Pause
+
 @enduml

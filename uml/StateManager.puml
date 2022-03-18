@@ -7,5 +7,6 @@ class StateManager {
     - MenuSetup() : void
     - MenuQuit() : void
 }
-MonoBehaviour <|-- StateManager
+StateManager --> "1" GameOver
+StateManager --> "   1" Victory
 @enduml

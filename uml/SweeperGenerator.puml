@@ -9,4 +9,6 @@ class SweeperGenerator {
     - ClickAround(coordInitClick:Vector2Int, mineX:int, mineY:int) : bool
     - CaseIsFree(randX:int, randY:int, coordInitClick:Vector2Int) : bool
 }
+SweeperGenerator "1" <-- SweeperManager
+SweeperGenerator ..> "1" SweeperManager
 @enduml
