@@ -1,6 +1,6 @@
-# demineur-3d
+# 3D Minesweeper
 
-This project is a simple minesweeper... in 3D with an online leaderboard.
+This project is a simple minesweeper... in 3D, first person view with an online leaderboard.
 
 Made with Unity.
 
